@@ -79,13 +79,14 @@ Note: With the stdio transport used in this example, you don't need to run the s
 
 
 ### RESPONSE
-
+```
 Initialized SSE client...
 Listing tools...
 
 Connected to server with tools: ['get_knowledge_base']
 
 Query: What is our company's vacation policy?
+
 -------START AI Message-------
 [
   {
@@ -120,3 +121,4 @@ Response: Our company's vacation policy is as follows:
 - Vacation days can be taken after completing 6 months of employment.
 - Unused vacation days can be carried over to the next year, with a maximum carryover of 5 days.
 - Vacation requests should be submitted at least 2 weeks in advance through the HR portal.
+```
