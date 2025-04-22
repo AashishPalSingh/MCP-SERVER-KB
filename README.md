@@ -67,6 +67,7 @@ Contains Q&A pairs about company policies that can be queried through the MCP se
 
 ## Server
 `docker build -t ashujss11/mcp-server .`
+
 `docker run -p 8050:8050 -d --name mcp-server ashujss11/mcp-server`
 
 1. Ensure you have the required dependencies installed
@@ -74,3 +75,50 @@ Contains Q&A pairs about company policies that can be queried through the MCP se
 3. Run the client: `python client.py`
 
 Note: With the stdio transport used in this example, you don't need to run the server separately as the client will automatically start it.
+
+
+
+### RESPONSE
+
+`
+Initialized SSE client...
+Listing tools...
+
+Connected to server with tools: ['get_knowledge_base']
+
+Query: What is our company's vacation policy?
+-------START AI Message-------
+[
+  {
+    'role': 'user',
+    'content': "What is our company's vacation policy?"
+  },
+  ChatCompletionMessage(content=None,
+  refusal=None,
+  role='assistant',
+  annotations=[
+    
+  ],
+  audio=None,
+  function_call=None,
+  tool_calls=[
+    ChatCompletionMessageToolCall(id='call_OrCTQBx5Xhsubq2eXge662aU',
+    function=Function(arguments='{}',
+    name='get_knowledge_base'),
+    type='function')
+  ]),
+  {
+    'role': 'tool',
+    'tool_call_id': 'call_OrCTQBx5Xhsubq2eXge662aU',
+    'content': "Here is the retrieved knowledge base:\n\nQ1: What is our company's vacation policy?\nA1: Full-time employees are entitled to 20 paid vacation days per year. Vacation days can be taken after completing 6 months of employment. Unused vacation days can be carried over to the next year up to a maximum of 5 days. Vacation requests should be submitted at least 2 weeks in advance through the HR portal.\n\nQ2: How do I request a new software license?\nA2: To request a new software license, please submit a ticket through the IT Service Desk portal. Include the software name, version, and business justification. Standard software licenses are typically approved within 2 business days. For specialized software, approval may take up to 5 business days and may require department head approval.\n\nQ3: What is our remote work policy?\nA3: Our company follows a hybrid work model. Employees can work remotely up to 3 days per week. Remote work days must be coordinated with your team and approved by your direct manager. All remote work requires a stable internet connection and a dedicated workspace. Core collaboration hours are 10:00 AM to 3:00 PM EST.\n\nQ4: How do I submit an expense report?\nA4: Expense reports should be submitted through the company's expense management system. Include all receipts, categorize expenses appropriately, and add a brief description for each entry. Reports must be submitted within 30 days of the expense. For expenses over $100, additional documentation may be required. All reports require manager approval.\n\nQ5: What is our process for reporting a security incident?\nA5: If you discover a security incident, immediately contact the Security Team at security@company.com or call the 24/7 security hotline. Do not attempt to investigate or resolve the incident yourself. Document what you observed, including timestamps and affected systems. The Security Team will guide you through the incident response process and may need your assistance for investigation.\n\n"
+  }
+]
+-------END AI Message-------
+
+Response: Our company's vacation policy is as follows:
+
+- Full-time employees are entitled to 20 paid vacation days per year.
+- Vacation days can be taken after completing 6 months of employment.
+- Unused vacation days can be carried over to the next year, with a maximum carryover of 5 days.
+- Vacation requests should be submitted at least 2 weeks in advance through the HR portal.
+`
