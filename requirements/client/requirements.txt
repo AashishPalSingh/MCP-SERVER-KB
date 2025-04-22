@@ -1,0 +1,4 @@
+mcp[cli]
+asyncio
+nest_asyncio
+openai
